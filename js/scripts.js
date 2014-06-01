@@ -1,11 +1,6 @@
 $(document).ready( function ()
 {
-	var $masonry = $('.masonry');
-
-	$masonry.masonry({
-		itemSelector: '.card',
-		isResizable: true
-	});
+	var $masonry = $('.cards-masonry');
 
 	$masonry.sortable({
 		distance: 12,
@@ -16,16 +11,30 @@ $(document).ready( function ()
 
 		start: function(event, ui) {
 			ui.item.addClass('dragging');
-			ui.item.parent().masonry('reload')
 		},
 		change: function(event, ui) {
-			ui.item.parent().masonry('reload');
 		},
 		stop: function(event, ui) {
 			ui.item.removeClass('dragging');
-			ui.item.parent().masonry('reload');
 		}
 	});
+
+	function saveTitles () {
+		$('.card-title.editing').each(function(){
+			var elem = $(this);
+			elem.html(elem.find('textarea').val()).removeClass('editing')
+		});
+	}
+
+	$('.card .size-changer').click(function(e){
+		e.stopPropagation();
+		e.preventDefault();
+	});
+
+	for (var i in cards) {
+		var card_object = new Cards.Object(cards[i]);
+		$masonry.append(card_object.getRenderedView());
+	}
 
 	$('.card .card-title').click(function(e){
 		var elem = $(this);
@@ -45,11 +54,4 @@ $(document).ready( function ()
 	});
 
 	$(window).click(function(){ saveTitles() });
-
-	function saveTitles () {
-		$('.card-title.editing').each(function(){
-			var elem = $(this);
-			elem.html(elem.find('textarea').val()).removeClass('editing')
-		});
-	}
 });

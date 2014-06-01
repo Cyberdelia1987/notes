@@ -7,12 +7,16 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="css/styles.css"/>
+	<link rel="stylesheet" href="css/media-queries.css"/>
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,900|Didact+Gothic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.10.4.min.js"></script>
-	<script type="text/javascript" src="js/jquery.masonry.min.js"></script>
+	<script type="text/javascript" src="js/iscroll/iscroll.js"></script>
+	<script type="text/javascript" src="js/class.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/card/object.js"></script>
+	<script type="text/javascript" src="js/json.js"></script>
 </head>
 <body>
 	<div id="wrapper">
@@ -24,158 +28,42 @@
 				</div>
 			</div>
 			<div id="sidebar-content">
-
+				<ul class="sidebar-menu">
+					<li class="active">
+						<a href="#" class="inner"><i class="fa fa-folder-o"></i> Категория 1</a>
+						<ul>
+							<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span></li>
+							<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
+						</ul>
+					</li>
+					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 2</span></li>
+					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 3</span></li>
+					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 4</span></li>
+					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 5</span></li>
+					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 6</span></li>
+					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 7</span></li>
+					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 8</span></li>
+					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 9</span></li>
+					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 10</span></li>
+				</ul>
 			</div>
 		</div>
 		<div id="content-wrapper">
-			<div id="content">
-				<div class="masonry">
-					<div class="card">
-						<div class="card-title">Заголовок карточки</div>
-						<div class="header-image-wrapper">
-							<img class="full-width" src="http://www.menucool.com/slider/prod/image-slider-5.jpg" alt=""/>
-						</div>
-						<div class="card-body">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id est tellus. Nullam accumsan libero est, nec aliquam erat iaculis in. Ut sit
-							amet lectus a enim pulvinar aliquam. Morbi rutrum mollis auctor.
-						</div>
-						<div class="card-controls">
-							<button class="btn btn-default"><i class="fa fa-eye"></i></button>
-							<button class="btn btn-default"><i class="fa fa-comments-o"></i> 1</button>
-							<button class="btn btn-default"><i class="fa fa-list"></i> 3/5</button>
-							<button class="btn btn-default"><i class="fa fa-paperclip"></i> 2</button>
-							<button class="btn btn-warning"><i class="fa fa-clock-o"></i></button>
-						</div>
+			<div class="top-bar">
+				<div class="top-bar-wrapper">
+					<div class="section">
+						<button class="btn btn-primary"><i class="fa fa-plus"></i></button>
 					</div>
-
-					<div class="card">
-						<div class="card-title">Более длинный заголовок карточки (совсем-совсем-совсем длинный)</div>
-						<div class="card-body">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id est tellus. Nu
-						</div>
-						<div class="card-controls">
-							<button class="btn btn-default"><i class="fa fa-eye"></i></button>
-							<button class="btn btn-default"><i class="fa fa-comments-o"></i> 1</button>
-							<button class="btn btn-default"><i class="fa fa-list"></i> 3/5</button>
-						</div>
-					</div>
-
-					<div class="card">
-						<div class="card-title">Заголовок карточки</div>
-						<div class="card-body">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id est tellus.
-						</div>
-						<div class="card-controls">
-							<button class="btn btn-default"><i class="fa fa-eye"></i></button>
-							<button class="btn btn-default"><i class="fa fa-comments-o"></i> 1</button>
-							<button class="btn btn-default"><i class="fa fa-list"></i> 3/5</button>
-						</div>
-					</div>
-
-					<div class="card">
-						<div class="card-title">Заголовок карточки</div>
-						<div class="card-body">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id est tellus. Nullam accumsan libero est, nec aliquam erat iaculis in. Ut sit
-							amet
-						</div>
-						<div class="card-controls">
-							<button class="btn btn-default"><i class="fa fa-eye"></i></button>
-							<button class="btn btn-default"><i class="fa fa-comments-o"></i> 1</button>
-							<button class="btn btn-default"><i class="fa fa-list"></i> 3/5</button>
-						</div>
-					</div>
-
-					<div class="card">
-						<div class="card-title">Заголовок карточки</div>
-						<div class="card-body">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id est tellus. Nullam accumsan libero est, nec aliquam erat iaculis in. Ut sit
-							amet lectus a enim pulvinar aliquam.
-						</div>
-						<div class="card-controls">
-							<button class="btn btn-default"><i class="fa fa-eye"></i></button>
-							<button class="btn btn-default"><i class="fa fa-comments-o"></i> 1</button>
-							<button class="btn btn-default"><i class="fa fa-list"></i> 3/5</button>
-						</div>
-					</div>
-
-					<div class="card">
-						<div class="card-title">Заголовок карточки</div>
-						<div class="card-body">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id est tellus. Nullam accumsan libero est, nec aliquam erat iaculis in. Ut sit
-							amet lectus a enim pulvinar aliquam. Morbi rutrum mollis auctor. Curabitur quis laoreet sem, in rutrum est. Cras scelerisque nisl at arcu
-							posuere sodales. Pellentesque dictum nibh fermentum nibh hendrerit aliquet. Curabitur quis laoreet sem, in rutrum est. Cras scelerisque nisl at arcu
-							posuere sodales. Pellentesque dictum nibh fermentum nibh hendrerit aliquet.
-						</div>
-						<div class="card-controls">
-							<button class="btn btn-default"><i class="fa fa-eye"></i></button>
-							<button class="btn btn-default"><i class="fa fa-comments-o"></i> 1</button>
-							<button class="btn btn-default"><i class="fa fa-list"></i> 3/5</button>
-						</div>
-					</div>
-
-					<div class="card">
-						<div class="card-title">Заголовок карточки</div>
-						<div class="card-body">
-							Lorem ipsum dolor sit amet, consectetur
-						</div>
-						<div class="card-controls">
-							<button class="btn btn-default"><i class="fa fa-eye"></i></button>
-							<button class="btn btn-default"><i class="fa fa-comments-o"></i> 1</button>
-							<button class="btn btn-default"><i class="fa fa-list"></i> 3/5</button>
-						</div>
-					</div>
-
-					<div class="card">
-						<div class="card-title">Заголовок карточки</div>
-						<div class="card-body">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id est tellus. Nullam accumsan libero est, nec a
-						</div>
-						<div class="card-controls">
-							<button class="btn btn-default"><i class="fa fa-eye"></i></button>
-							<button class="btn btn-default"><i class="fa fa-comments-o"></i> 1</button>
-							<button class="btn btn-default"><i class="fa fa-list"></i> 3/5</button>
-						</div>
-					</div>
-
-					<div class="card">
-						<div class="card-title">Заголовок карточки</div>
-						<div class="card-body">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id est tellus. Nullam accumsan libero est, nec aliquam erat iaculis in. Ut sit
-							amet lectus a enim pulvinar aliquam. Morbi rutrum mollis auctor. Curabitur quis laoreet sem, in rutrum est. Cras scelerisque nisl at arcu
-							posuere sodales. Pellentesque dictum nibh fermentum nibh hendrerit aliquet.
-						</div>
-						<div class="card-controls">
-							<button class="btn btn-default"><i class="fa fa-eye"></i></button>
-							<button class="btn btn-default"><i class="fa fa-comments-o"></i> 1</button>
-							<button class="btn btn-default"><i class="fa fa-list"></i> 3/5</button>
-						</div>
-					</div>
-
-					<div class="card">
-						<div class="card-title">Заголовок карточки</div>
-						<div class="card-body">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id est tellus. Nullam accumsan libero est, nec aliquam erat iaculis in. Ut sit
-							amet lectus a enim pulvinar aliquam. Morbi rutrum mollis
-						</div>
-						<div class="card-controls">
-							<button class="btn btn-default"><i class="fa fa-eye"></i></button>
-							<button class="btn btn-default"><i class="fa fa-comments-o"></i> 1</button>
-							<button class="btn btn-default"><i class="fa fa-list"></i> 3/5</button>
-						</div>
-					</div>
-
-					<div class="card">
-						<div class="card-title">Заголовок карточки</div>
-						<div class="card-body">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id est tellus.
-						</div>
-						<div class="card-controls">
-							<button class="btn btn-default"><i class="fa fa-eye"></i></button>
-							<button class="btn btn-default"><i class="fa fa-comments-o"></i> 1</button>
-							<button class="btn btn-default"><i class="fa fa-list"></i> 3/5</button>
+					<div class="section pull-right search">
+						<div class="input-group">
+							<input type="text" class="form-control">
+							<span class="input-group-addon"><i class="fa fa-search"></i></span>
 						</div>
 					</div>
 				</div>
+			</div>
+			<div id="content">
+				<div class="cards-masonry"></div>
 			</div>
 		</div>
 	</div>
