@@ -117,6 +117,7 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 	border-radius: 5px 0 0 5px;
 	box-shadow: -1px 1px 0 rgba(12, 12, 12, 0.2);
 	right: -40px;
+	width: 36px;
 }
 
 .cards-masonry .card:not(:hover) .card-controls {
@@ -125,8 +126,8 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 
 .cards-masonry .card .card-controls .btn {
 	padding: 0 6px; font-weight: normal;
-	display: block;
 	margin-bottom: 5px;
+	transition: margin 0;
 }
 
 .cards-masonry .card .card-body-wrapper { position: relative; overflow: hidden; }
