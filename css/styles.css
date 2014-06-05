@@ -22,7 +22,7 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 
 #content-wrapper { margin-left: 250px; }
 #sidebar-content { padding: 15px; }
-#content { padding: 15px; }
+#content { padding: 0 15px 15px 15px; }
 
 #sidebar-head {
 	padding: 15px;
@@ -103,7 +103,6 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 	column-count: 2;
 	column-gap: 15px;
 	min-width: 510px;
-	margin-top: 42px;
 }
 .cards-masonry .card {
 	background: #fcfcfc;
@@ -217,14 +216,14 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 .sidebar-menu li { position: relative; }
 
 
-.sidebar-menu li:last-child::before { height: 22px; }
+.sidebar-menu li:last-child::before { height: 21px; top: -7px; }
 .sidebar-menu li::before {
 	content: '';
 	position: absolute;
 	top: -8px;
 	height: 100%;
 	left: 0;
-	border-left: 1px solid #506274;
+	border-left: 1px dotted #506274;
 }
 
 .sidebar-menu li::after {
@@ -234,7 +233,7 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 	width: 10px;
 	height: 1em;
 	left: 0;
-	border-top: 1px solid #506274;
+	border-top: 1px dotted #506274;
 }
 
 .sidebar-menu > li::before, .sidebar-menu > li::after { border: 0; }
@@ -278,35 +277,14 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 	margin-left: -7px;
 }
 
-#content-wrapper .top-bar {
-	background: #FFF;
-	height: 42px;
-	position: fixed;
-	z-index: 2;
-	width: 100%;
-	-webkit-box-shadow: 0 2px 0 rgba(12, 12, 12, 0.2);
-	-moz-box-shadow:    0 2px 0 rgba(12, 12, 12, 0.2);
-	box-shadow:         0 2px 0 rgba(12, 12, 12, 0.2);
-	top: 0;
-	left: 250px;
-}
-
-.top-bar .top-bar-wrapper {
-	padding: 0 15px;
-	height: 100%;
-}
-
-.top-bar .top-bar-wrapper .section {
-	line-height: 42px;
-	border: solid #ddd;
-	border-width: 0 1px;
-	display: inline-block;
-	padding: 0 15px;
-	height: 100%;
-}
-
-.top-bar .section:last-child { margin-right: 250px; }
-.top-bar .section.search { width: 200px; padding-top: 7px; }
-.top-bar .section.search input[type="text"] { height: 28px; }
+.top-bar .search { width: 200px; }
 
 .slimScrollBar { transition: all 0; }
+
+.dropdown-menu>li.row {
+	padding: 3px 20px;
+	line-height: 24px;
+}
+.dropdown-menu.container { width: 250px; }
+.dropdown-menu.container .row .btn { padding: 3px 6px 0 6px; }
+.dropdown-menu .row label { margin: 3px 0 0 0; display: block; }
