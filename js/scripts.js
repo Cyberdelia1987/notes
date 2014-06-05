@@ -67,3 +67,20 @@ $(document).ready( function ()
 		});
 	});
 });
+
+$.ajax({
+	url: 'http://api.randomuser.me/',
+	dataType: 'json',
+	success: function(data){
+		var userName = ucfirst(data.results[0].user.name.first)+' '+ucfirst(data.results[0].user.name.last);
+
+		$('.userpannel .username').html(userName);
+		$('.userpannel .userpic').attr('src', data.results[0].user.picture);
+	}
+});
+
+function ucfirst(str) {
+	str += '';
+	var f = str.charAt(0).toUpperCase();
+	return f + str.substr(1);
+}
