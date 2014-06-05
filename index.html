@@ -12,7 +12,8 @@
 
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.10.4.min.js"></script>
-	<script type="text/javascript" src="js/iscroll/iscroll.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
 	<script type="text/javascript" src="js/class.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 	<script type="text/javascript" src="js/card/object.js"></script>
@@ -22,23 +23,72 @@
 	<div id="wrapper">
 		<div id="sidebar-wrapper">
 			<div id="sidebar-head">
-				<div id="sidebar-text"><strong>Заметки</strong></div>
-				<div id="sidebar-menu-icon">
-					<i class="fa fa-bars"></i>
+				<div class="userpannel">
+					<div class="userpic-wrapper">
+						<img class="userpic" src="http://gravatar.com/avatar/5195f31c300161c237bab49a07bffc9f">
+					</div>
+					<span class="username">Александр Сибов</span>
+					<div class="user-menu pull-right dropdown">
+						<i class="dropdown-toggle fa fa-chevron-down" data-toggle="dropdown"></i>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-header">Dropdown header</li>
+							<li><a href="#">Separated link</a></li>
+							<li><a href="#">One more separated link</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
+			<div class="delimiter"></div>
+			<h3>Категории</h3>
 			<div id="sidebar-content">
-				<ul class="sidebar-menu">
+				<ul class="sidebar-menu slimscroll" data-slimscroll-height="450">
 					<li class="active">
 						<a href="#" class="inner"><i class="fa fa-folder-o"></i> Категория 1</a>
 						<ul>
-							<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span></li>
+							<li>
+								<span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span>
+								<ul>
+									<li>
+										<span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span>
+										<ul>
+											<li>
+												<span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span>
+												<ul>
+													<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span></li>
+													<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
+													<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span></li>
+													<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
+													<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span></li>
+												</ul>
+											</li>
+											<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
+										</ul>
+									</li>
+									<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
+								</ul>
+							</li>
 							<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
 						</ul>
 					</li>
 					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 2</span></li>
 					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 3</span></li>
-					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 4</span></li>
+					<li>
+						<span class="inner"> <i class="fa fa-folder-o"></i> Категория 4</span>
+						<ul>
+							<li>
+								<span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span>
+								<ul>
+									<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span></li>
+									<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
+								</ul>
+							</li>
+							<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
+						</ul>
+					</li>
 					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 5</span></li>
 					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 6</span></li>
 					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 7</span></li>
@@ -47,6 +97,7 @@
 					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 10</span></li>
 				</ul>
 			</div>
+			<div class="delimiter"></div>
 		</div>
 		<div id="content-wrapper">
 			<div class="top-bar">

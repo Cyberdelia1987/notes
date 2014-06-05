@@ -54,4 +54,16 @@ $(document).ready( function ()
 	});
 
 	$(window).click(function(){ saveTitles() });
+
+	$('.slimscroll').each(function(){
+		var elem = $(this),
+			height = elem.data('slimscrollHeight');
+
+		if (!height) height = null;
+		elem.slimScroll({
+			height: height,
+			railVisible: true,
+			alwaysVisible: true
+		});
+	});
 });

@@ -16,7 +16,8 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 	position: fixed;
 	height: 100%;
 	background: #2E3E4D;
-	color: #B6BCC4;
+	color: #C1CFD9;
+	z-index: 101;
 }
 
 #content-wrapper { margin-left: 250px; }
@@ -35,6 +36,63 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 	margin: 8px;
 	font-size: 2em;
 	cursor: pointer;
+}
+
+#sidebar-wrapper .delimiter {
+	display: block;
+	width: 100%;
+	background: #303A4A;
+	height: 2px;
+	border-top: 1px solid #293241;
+	border-bottom: 1px solid #2B3544;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+#sidebar-head .userpannel .userpic {
+	height: 32px;
+	border-radius: 50%;
+}
+
+#sidebar-head .userpannel .userpic-wrapper {
+	border-radius: 50%;
+	padding: 2px;
+	display: inline-block;
+	border: 2px solid #5A6B7C;
+	width: 40px;
+	height: 40px;
+}
+
+#sidebar-head .userpannel .user-menu {
+	position: relative;
+	margin-top: 7px;
+}
+
+#sidebar-head .userpannel .user-menu .user-actions {
+	position: absolute;
+	top: 0;
+	left: 0;
+	list-style: none;
+	background: #ffffff;
+	margin-top: 1.5em;
+	min-width: 150px;
+	max-width: 250px;
+	max-height: 0;
+	overflow: hidden;
+	padding: 0;
+	border: 1px solid #dddddd;
+	opacity: 0;
+	border-radius: 3px;
+	color: #404040;
+	-webkit-box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    2px 2px 0 rgba(0, 0, 0, 0.1);
+	box-shadow:         2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+#sidebar-wrapper h3 {
+	color: #ffffff;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	margin: 15px 0 0 15px;
 }
 
 .cards-masonry {
@@ -148,7 +206,7 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 
 #sidebar-content .sidebar-menu .fa {
 	margin-right: 3px;
-	color: #158cba;
+	color: #F97E76;
 	font-size: 1.2em;
 }
 
@@ -156,6 +214,30 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 	padding-left: 15px;
 	list-style: none;
 }
+.sidebar-menu li { position: relative; }
+
+
+.sidebar-menu li:last-child::before { height: 22px; }
+.sidebar-menu li::before {
+	content: '';
+	position: absolute;
+	top: -8px;
+	height: 100%;
+	left: 0;
+	border-left: 1px solid #506274;
+}
+
+.sidebar-menu li::after {
+	content: '';
+	position: absolute;
+	top: 1em;
+	width: 10px;
+	height: 1em;
+	left: 0;
+	border-top: 1px solid #506274;
+}
+
+.sidebar-menu > li::before, .sidebar-menu > li::after { border: 0; }
 
 .sidebar-menu .inner:hover {
 	background: #fff;
@@ -166,7 +248,7 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 	display: inline-block;
 	width: 100%;
 	border-radius: 5px;
-	color: #B6BCC4;
+	color: #C1CFD9;
 	text-decoration: none;
 	white-space: nowrap;
 	font-size: 13px;
@@ -226,3 +308,5 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 .top-bar .section:last-child { margin-right: 250px; }
 .top-bar .section.search { width: 200px; padding-top: 7px; }
 .top-bar .section.search input[type="text"] { height: 28px; }
+
+.slimScrollBar { transition: all 0; }
