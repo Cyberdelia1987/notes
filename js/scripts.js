@@ -1,6 +1,6 @@
 $(document).ready( function ()
 {
-	var $masonry = $('.cards-masonry');
+	var $masonry = $('.cards-container');
 
 	$masonry.sortable({
 		distance: 12,
@@ -82,5 +82,48 @@ $(document).ready( function ()
 		str += '';
 		var f = str.charAt(0).toUpperCase();
 		return f + str.substr(1);
+	}
+
+	if (value = getFromLocalStorage('cards_style')) {
+		$('.cards-container').addClass(value);
+		switch (value) {
+			case 'cards-masonry' : $('.cards-type i').attr('class', $('.notes-as-cards i').attr('class')); break;
+			case 'cards-list' : $('.cards-type i').attr('class', $('.notes-as-list i').attr('class')); break;
+		}
+	} else {
+		$('.cards-container').addClass('cards-masonry');
+	}
+
+	$('.notes-as-list').click(function(){
+		var elem = $(this),
+			iClass = elem.find('i').attr('class');
+
+		elem.closest('.dropdown').find('.cards-type i').attr('class', iClass);
+
+		$('.cards-container').removeClass('cards-masonry').addClass('cards-list');
+		writeToLocalStorage('cards_style', 'cards-list');
+	});
+
+	$('.notes-as-cards').click(function(){
+		var elem = $(this),
+			iClass = elem.find('i').attr('class');
+
+		elem.closest('.dropdown').find('.cards-type i').attr('class', iClass);
+
+		$('.cards-container').removeClass('cards-list').addClass('cards-masonry');
+		writeToLocalStorage('cards_style', 'cards-masonry');
+	});
+
+
+	function writeToLocalStorage (name, value) {
+		if (typeof window.localStorage == 'undefined') return;
+
+		window.localStorage.setItem(name, value);
+	}
+
+	function getFromLocalStorage(name) {
+		if (typeof window.localStorage == 'undefined') return;
+
+		return window.localStorage.getItem(name);
 	}
 });

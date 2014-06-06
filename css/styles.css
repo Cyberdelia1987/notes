@@ -4,6 +4,8 @@ body {
 }
 div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, background-position 0; }
 
+.btn { transition: margin 0; }
+
 .label { border: 1px solid; }
 .label-default {
 	color: #555555;
@@ -11,23 +13,16 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 	border-color: #e2e2e2;
 }
 
-#sidebar-wrapper {
-	width: 250px;
-	position: fixed;
-	height: 100%;
-	background: #2E3E4D;
-	color: #C1CFD9;
-	z-index: 101;
-}
-
+.sidebar { background: #2E3E4D; color: #C1CFD9; }
 #content-wrapper { margin-left: 250px; }
-#sidebar-content { padding: 15px; }
-#content { padding: 0 15px 15px 15px; }
 
 #sidebar-head {
-	padding: 15px;
+	padding: 10px 15px;
 	position: relative;
+	width: 220px;
 }
+
+#header.navbar .navbar-header { background: transparent; }
 
 #sidebar-menu-icon {
 	position: absolute;
@@ -64,7 +59,7 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 
 #sidebar-head .userpannel .user-menu {
 	position: relative;
-	margin-top: 7px;
+	margin-top: 10px;
 }
 
 #sidebar-head .userpannel .user-menu .user-actions {
@@ -88,13 +83,15 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 	box-shadow:         2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
-#sidebar-wrapper h3 {
+.sidebar .content h5.heading {
 	color: #ffffff;
-	font-size: 1.2em;
 	text-transform: uppercase;
-	margin: 15px 0 0 15px;
+	padding: 15px;
 }
 
+.cards-container .card { display: none; }
+
+/** Заметки в виде карточек */
 .cards-masonry {
 	-moz-column-count: 2;
 	-moz-column-gap: 10px;
@@ -105,7 +102,7 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 	min-width: 510px;
 }
 .cards-masonry .card {
-	background: #fcfcfc;
+	background: #FFFFFF;
 	width: 100%;
 	display: inline-block;
 	margin: 0 15px 15px 0;
@@ -117,6 +114,8 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 	font-size: 12px;
 	position: relative;
 }
+
+.cards-masonry .card:hover { background-color: #F8F8F8; }
 
 .cards-masonry .card .card-title,
 .cards-masonry .card .card-body,
@@ -139,13 +138,7 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 .cards-masonry .card.info .card-title { border-bottom-color: #158CBA; }
 .cards-masonry .card.success .card-title { border-bottom-color: #28B62C; }
 .cards-masonry .card.danger .card-title { border-bottom-color: #FF4136; }
-
-.cards-masonry .card .card-body {
-	max-height: 120px;
-	overflow: hidden;
-	position: relative;
-	padding: 10px;
-}
+.cards-masonry .card .card-body { max-height: 120px; overflow: hidden; position: relative; padding: 10px; }
 
 .cards-masonry .card .card-body:after {
 	position: absolute;
@@ -177,16 +170,8 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 	width: 36px;
 }
 
-.cards-masonry .card:not(:hover) .card-controls {
-	transition-delay: 0.3s;
-}
-
-.cards-masonry .card .card-controls .btn {
-	padding: 0 6px; font-weight: normal;
-	margin-bottom: 5px;
-	transition: margin 0;
-}
-
+.cards-masonry .card:not(:hover) .card-controls { transition-delay: 0.3s; }
+.cards-masonry .card .card-controls .btn { padding: 0 6px; font-weight: normal; margin-bottom: 5px; transition: margin 0; }
 .cards-masonry .card .card-body-wrapper { position: relative; overflow: hidden; }
 .cards-masonry .card:hover .card-controls { right: 0; }
 .cards-masonry .card .card-badges .label { font-size: 1em; }
@@ -196,73 +181,10 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 .cards-masonry .card .card-title textarea { width: 100%; height: auto; }
 .cards-masonry .card-sortable-placeholder { background: #aaa !important; }
 .cards-masonry .card.dragging { opacity: 0.8; transition: none; }
+.cards-masonry .card .resizer { position: relative; height: 11px; cursor: n-resize; opacity: 0; }
+.cards-masonry .card:hover .resizer { opacity: 1; }
 
-#sidebar-content .sidebar-menu {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-#sidebar-content .sidebar-menu .fa {
-	margin-right: 3px;
-	color: #F97E76;
-	font-size: 1.2em;
-}
-
-#sidebar-content .sidebar-menu ul {
-	padding-left: 15px;
-	list-style: none;
-}
-.sidebar-menu li { position: relative; }
-
-
-.sidebar-menu li:last-child::before { height: 21px; top: -7px; }
-.sidebar-menu li::before {
-	content: '';
-	position: absolute;
-	top: -8px;
-	height: 100%;
-	left: 0;
-	border-left: 1px dotted #506274;
-}
-
-.sidebar-menu li::after {
-	content: '';
-	position: absolute;
-	top: 1em;
-	width: 10px;
-	height: 1em;
-	left: 0;
-	border-top: 1px dotted #506274;
-}
-
-.sidebar-menu > li::before, .sidebar-menu > li::after { border: 0; }
-
-.sidebar-menu .inner:hover {
-	background: #fff;
-	color: #404040;
-}
-.sidebar-menu .inner {
-	padding: 5px 10px;
-	display: inline-block;
-	width: 100%;
-	border-radius: 5px;
-	color: #C1CFD9;
-	text-decoration: none;
-	white-space: nowrap;
-	font-size: 13px;
-}
-
-.card .resizer {
-	position: relative;
-	height: 11px;
-	cursor: n-resize;
-	opacity: 0;
-}
-
-.card:hover .resizer { opacity: 1; }
-
-.card .resizer:before {
+.cards-masonry .card .resizer:before {
 	content: '';
 	position: absolute;
 	left: 50%;
@@ -276,10 +198,90 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 	margin-bottom: 2px;
 	margin-left: -7px;
 }
+/** END Заметки в виде карточек */
 
+/** Заметки в виде списка */
+.cards-list .card {
+	background-color: #FFFFFF;
+	width: 100%;
+	margin: 0 0 5px 0;
+	border-radius: 5px;
+	border: 1px solid #CFCFCF;
+	font-size: 12px;
+	position: relative;
+	padding: 10px 15px;
+	display: table;
+	min-width: 350px;
+}
+
+.cards-list .card:hover { background-color: #F8F8F8; }
+.cards-list .card-title { display: table-cell; width: 20%; font-weight: bold; vertical-align: middle; }
+.cards-list .card-title textarea { width: 100%; }
+.cards-list .card-body-wrapper { display: table-cell; width: 60%; height: 1.3em; overflow: hidden; position: relative; }
+.cards-list .card-body-wrapper .card-body { margin: 0 15px; display: block; height: 2.8em; overflow: hidden; }
+.cards-list .card-badges { display: table-cell; width: 20%; text-align: right; vertical-align: middle; }
+.cards-list .card.dragging { opacity: 0.8; transition: none; }
+.cards-list .card-sortable-placeholder { background: #aaaaaa; }
+.cards-list .card img.full-width { max-width: 64px; max-height: 64px; margin-left: -50%; margin-top: -50%; }
+
+.cards-list .header-image-wrapper {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: 2px solid #DDD;
+	overflow: hidden;
+	padding: 2px;
+	display: block;
+	float: left;
+	margin: 0 10px 0 15px;
+}
+
+.cards-list .card .card-controls {
+	font-size: 1em;
+	position: absolute;
+	right: 0;
+	background: #FFF;
+	border: 1px solid #DDD;
+	padding: 5px;
+	border-radius: 5px;
+	top: -40px;
+}
+
+.cards-list .card:not(:hover) .card-controls { transition-delay: 0.3s; }
+.cards-list .card .card-controls .btn { padding: 0 6px; font-weight: normal; margin-bottom: 0px; transition: margin 0; }
+.cards-list .card:hover .card-controls { top: 0; }
+/** END Заметки в виде списка */
+
+.sidebar .content .sidebar-menu { list-style: none; margin: 0; padding: 0; }
+.sidebar .content .sidebar-menu .fa { margin-right: 3px; color: #F97E76; font-size: 1.2em; }
+.sidebar .content .sidebar-menu ul { padding-left: 15px; list-style: none; }
+.sidebar-menu li { position: relative; }
+
+.sidebar-menu li:last-child::before { height: 21px; top: -7px; }
+.sidebar-menu li::before { content: ''; position: absolute; top: -8px; height: 100%; left: 0; border-left: 1px dotted #506274; }
+.sidebar-menu li::after { content: ''; position: absolute; top: 1em; width: 10px; height: 1em; left: 0; border-top: 1px dotted #506274; }
+.sidebar-menu > li::before, .sidebar-menu > li::after { border: 0; }
+
+.sidebar-menu .inner {
+	padding: 5px 10px;
+	display: inline-block;
+	width: 100%;
+	border-radius: 3px;
+	color: #C1CFD9;
+	text-decoration: none;
+	white-space: nowrap;
+	font-size: 13px;
+}
+
+.sidebar-menu .inner:hover,
+.sidebar-menu li.active > .inner { background: #F8F8F8; color: #404040; }
 .top-bar .search { width: 200px; }
-
 .slimScrollBar { transition: all 0; }
+
+.top-bar .btn {
+	font-size: 14px;
+	font-weight: normal;
+}
 
 .dropdown-menu>li.row {
 	padding: 3px 20px;
@@ -288,3 +290,10 @@ div, input, select, button, span, ul, li, a, img { transition: all 0.1s linear, 
 .dropdown-menu.container { width: 250px; }
 .dropdown-menu.container .row .btn { padding: 3px 6px 0 6px; }
 .dropdown-menu .row label { margin: 3px 0 0 0; display: block; }
+
+body.modal-open #wrapper {
+	-webkit-filter: /*blur(3px)*/ grayscale(80%);
+	-moz-filter: /*blur(3px)*/ grayscale(80%);
+	-ms-filter: /*blur(3px)*/ grayscale(80%);
+	filter:     /*blur(3px)*/ grayscale(80%);
+}

@@ -4,216 +4,288 @@
 	<meta charset="UTF-8">
 	<title>Заметки</title>
 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="cyber">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 	<link rel="stylesheet" href="css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/backend.min.css" />
+	<link rel="stylesheet" href="css/uielement.min.css" />
 	<link rel="stylesheet" href="css/styles.css"/>
 	<link rel="stylesheet" href="css/media-queries.css"/>
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,900|Didact+Gothic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<header id="header" class="navbar navbar-default navbar-fixed-top top-bar">
+		<div id="sidebar-head" class="navbar-header">
+			<div class="userpannel">
+				<div class="userpic-wrapper">
+					<img class="userpic" src="http://gravatar.com/avatar/5195f31c300161c237bab49a07bffc9f">
+				</div>
+				<span class="username">Александр Сибов</span>
+				<div class="user-menu pull-right dropdown">
+					<i class="dropdown-toggle fa fa-chevron-down" data-toggle="dropdown"></i>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li class="dropdown-header">Dropdown header</li>
+						<li><a href="#">Separated link</a></li>
+						<li><a href="#">One more separated link</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="navbar-toolbar clearfix">
+			<ul class="nav navbar-nav navbar-left">
+				<li>
+					<a href="javascript:void(0);" data-toggle="minimize" title="Minimize sidebar">
+						<span class="meta"><span class="icon"><i class="fa fa-bars"></i></span></span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);"><span class="meta"><span class="icon"><i class="fa fa-plus"></i></span></span></a>
+				</li>
+				<li>
+					<a href="#" data-toggle="modal" data-target="#myModal"><span class="meta"><span class="text">Launch demo modal</span></span></a>
+				</li>
+			</ul>
+			<div class="navbar-form navbar-left dropdown" id="dropdown-form">
+				<form action="" role="search">
+					<div class="has-icon">
+						<input type="text" class="form-control" placeholder="Search application...">
+						<i class="ico-search form-control-icon"></i>
+					</div>
+				</form>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown custom" id="header-dd-notification">
+					<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+						<span class="meta">
+							<span class="icon"><i class="fa fa-inbox"></i></span>
+							<span class="hasnotification hasnotification-danger"></span>
+						</span>
+					</a>
+					<!-- Dropdown menu -->
+					<div class="dropdown-menu" role="menu">
+						<div class="dropdown-header">
+							<span class="title">Оповещений <span class="count">10</span></span>
+							<span class="option text-right"><a href="javascript:void(0);">Очистить</a></span>
+						</div>
+						<div class="dropdown-body slimscroll">
+							<!-- Message list -->
+							<div class="media-list">
+								<a href="javascript:void(0);" class="media read border-dotted">
+									<span class="media-object pull-left">
+										<i class="ico-basket2 bgcolor-info"></i>
+									</span>
+									<span class="media-body">
+										<span class="media-text">Duis aute irure dolor in <span class="text-primary semibold">reprehenderit</span> in voluptate.</span>
+										<span class="media-meta pull-right">2d</span>
+									</span>
+								</a>
+
+								<a href="javascript:void(0);" class="media read border-dotted">
+									<span class="media-object pull-left">
+										<i class="ico-call-incoming"></i>
+									</span>
+									<span class="media-body">
+										<span class="media-text">Aliquip ex ea commodo consequat.</span>
+										<span class="media-meta pull-right">1w</span>
+									</span>
+								</a>
+
+								<a href="javascript:void(0);" class="media read border-dotted">
+									<span class="media-object pull-left">
+										<i class="ico-alarm2"></i>
+									</span>
+									<span class="media-body">
+										<span class="media-text">Excepteur sint <span class="text-primary semibold">occaecat</span> cupidatat non.</span>
+										<span class="media-meta pull-right">12w</span>
+									</span>
+								</a>
+
+								<a href="javascript:void(0);" class="media read border-dotted">
+									<span class="media-object pull-left">
+										<i class="ico-checkmark3 bgcolor-success"></i>
+									</span>
+									<span class="media-body">
+										<span class="media-text">Lorem ipsum dolor sit amet, <span class="text-primary semibold">consectetur</span> adipisicing elit.</span>
+										<span class="media-meta pull-right">14w</span>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+						<span class="meta">
+							<span class="icon"><i class="fa fa-filter"></i></span>
+							<span class="caret"></span>
+						</span>
+					</a>
+					<ul class="dropdown-menu container" role="menu">
+						<li class="row">
+							<div class="col-sm-7"><label><input type="checkbox"> <span class="pull-right">Порядок</span></label></div>
+							<div class="col-sm-5">
+								<div class="btn-group">
+									<button type="button" class="btn btn-default"><i class="fa fa-chevron-down"></i></button>
+									<button type="button" class="btn btn-default"><i class="fa fa-chevron-up"></i></button>
+								</div>
+							</div>
+						</li>
+						<li class="row">
+							<div class="col-sm-7"><label><input type="checkbox"> <span class="pull-right">Заголовок</span></label></div>
+							<div class="col-sm-5">
+								<div class="btn-group">
+									<button type="button" class="btn btn-default"><i class="fa fa-chevron-down"></i></button>
+									<button type="button" class="btn btn-default"><i class="fa fa-chevron-up"></i></button>
+								</div>
+							</div>
+						</li>
+						<li class="row">
+							<div class="col-sm-7"><label><input type="checkbox"> <span class="pull-right">Описание</span></label></div>
+							<div class="col-sm-5">
+								<div class="btn-group">
+									<button type="button" class="btn btn-primary"><i class="fa fa-chevron-down"></i></button>
+									<button type="button" class="btn btn-default"><i class="fa fa-chevron-up"></i></button>
+								</div>
+							</div>
+						</li>
+						<li class="row">
+							<div class="col-sm-7"><label><input type="checkbox"> <span class="pull-right">Создан</span></label></div>
+							<div class="col-sm-5">
+								<div class="btn-group">
+									<button type="button" class="btn btn-default"><i class="fa fa-chevron-down"></i></button>
+									<button type="button" class="btn btn-default"><i class="fa fa-chevron-up"></i></button>
+								</div>
+							</div>
+						</li>
+						<li class="divider"></li>
+						<li class="row">
+							<div class="col-sm-12">
+								<button type="button" class="btn btn-primary">Применить</button>
+								<button type="button" class="btn btn-danger">Отменить</button>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+						<span class="meta">
+							<span class="icon cards-type"><i class="fa fa-th"></i></span>
+							<span class="caret"></span>
+						</span>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#" class="notes-as-list"><i class="fa fa-th-list"></i> Список</a></li>
+							<li><a href="#" class="notes-as-cards"><i class="fa fa-th-large"></i> Карточки</a></li>
+						</ul>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="dropdown" data-target="#dropdown-form">
+						<span class="meta">
+							<span class="icon"><i class="fa fa-search"></i></span>
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<aside class="sidebar sidebar-left sidebar-menu">
+		<section class="content slimscroll">
+			<h5 class="heading">Основное меню</h5>
+			<ul class="sidebar-menu" data-toggle="menu">
+				<li class="active">
+					<a href="#" class="inner"><i class="fa fa-folder-o"></i> Категория 1</a>
+					<ul>
+						<li>
+							<span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span>
+							<ul>
+								<li>
+									<span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span>
+									<ul>
+										<li>
+											<span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span>
+											<ul>
+												<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span></li>
+												<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
+												<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span></li>
+												<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
+												<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span></li>
+											</ul>
+										</li>
+										<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
+									</ul>
+								</li>
+								<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
+							</ul>
+						</li>
+						<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
+					</ul>
+				</li>
+				<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 2</span></li>
+				<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 3</span></li>
+				<li>
+					<span class="inner"> <i class="fa fa-folder-o"></i> Категория 4</span>
+					<ul>
+						<li>
+							<span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span>
+							<ul>
+								<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span></li>
+								<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
+							</ul>
+						</li>
+						<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
+					</ul>
+				</li>
+				<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 5</span></li>
+				<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 6</span></li>
+				<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 7</span></li>
+				<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 8</span></li>
+				<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 9</span></li>
+				<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 10</span></li>
+			</ul>
+		</section>
+		<div class="delimiter"></div>
+	</aside>
+	<div id="main">
+		<div class="container-fluid">
+			<div id="content">
+				<div class="cards-container"></div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<p>One fine body&hellip;</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.10.4.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/core.min.js"></script>
 	<script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
 	<script type="text/javascript" src="js/class.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 	<script type="text/javascript" src="js/card/object.js"></script>
 	<script type="text/javascript" src="js/json.js"></script>
-</head>
-<body>
-	<div id="wrapper">
-		<div id="sidebar-wrapper">
-			<div id="sidebar-head">
-				<div class="userpannel">
-					<div class="userpic-wrapper">
-						<img class="userpic" src="http://gravatar.com/avatar/5195f31c300161c237bab49a07bffc9f">
-					</div>
-					<span class="username">Александр Сибов</span>
-					<div class="user-menu pull-right dropdown">
-						<i class="dropdown-toggle fa fa-chevron-down" data-toggle="dropdown"></i>
-						<ul class="dropdown-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li class="divider"></li>
-							<li class="dropdown-header">Dropdown header</li>
-							<li><a href="#">Separated link</a></li>
-							<li><a href="#">One more separated link</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="delimiter"></div>
-			<h3>Категории</h3>
-			<div id="sidebar-content">
-				<ul class="sidebar-menu slimscroll" data-slimscroll-height="450">
-					<li class="active">
-						<a href="#" class="inner"><i class="fa fa-folder-o"></i> Категория 1</a>
-						<ul>
-							<li>
-								<span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span>
-								<ul>
-									<li>
-										<span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span>
-										<ul>
-											<li>
-												<span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span>
-												<ul>
-													<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span></li>
-													<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
-													<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span></li>
-													<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
-													<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span></li>
-												</ul>
-											</li>
-											<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
-										</ul>
-									</li>
-									<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
-								</ul>
-							</li>
-							<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
-						</ul>
-					</li>
-					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 2</span></li>
-					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 3</span></li>
-					<li>
-						<span class="inner"> <i class="fa fa-folder-o"></i> Категория 4</span>
-						<ul>
-							<li>
-								<span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span>
-								<ul>
-									<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 1</span></li>
-									<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
-								</ul>
-							</li>
-							<li><span class="inner"> <i class="fa fa-folder-o"></i> Подкатегория 2</span></li>
-						</ul>
-					</li>
-					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 5</span></li>
-					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 6</span></li>
-					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 7</span></li>
-					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 8</span></li>
-					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 9</span></li>
-					<li><span class="inner"> <i class="fa fa-folder-o"></i> Категория 10</span></li>
-				</ul>
-			</div>
-			<div class="delimiter"></div>
-		</div>
-		<div id="content-wrapper">
-
-			<nav class="navbar navbar-default  top-bar" role="navigation">
-				<div class="container-fluid">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="#"><i class="fa fa-bars"></i></a>
-					</div>
-
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav ">
-							<li>
-								<div class="navbar-form navbar-left">
-									<button class="btn btn-primary"><i class="fa fa-plus"></i></button>
-								</div>
-							</li>
-							<li class="nav-divider"></li>
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							<li>
-								<div class="navbar-form navbar-right">
-									<!-- Split button -->
-									<div class="btn-group">
-										<button type="button" class="btn btn-default"><i class="fa fa-filter"></i></button>
-										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-											<span class="caret"></span>
-											<span class="sr-only">Toggle Dropdown</span>
-										</button>
-										<ul class="dropdown-menu container" role="menu">
-											<li class="row">
-												<div class="col-sm-7"><label><input type="checkbox"> <span class="pull-right">Порядок</span></label></div>
-												<div class="col-sm-5">
-													<div class="btn-group">
-														<button type="button" class="btn btn-default"><i class="fa fa-chevron-down"></i></button>
-														<button type="button" class="btn btn-default"><i class="fa fa-chevron-up"></i></button>
-													</div>
-												</div>
-											</li>
-											<li class="row">
-												<div class="col-sm-7"><label><input type="checkbox"> <span class="pull-right">Заголовок</span></label></div>
-												<div class="col-sm-5">
-													<div class="btn-group">
-														<button type="button" class="btn btn-default"><i class="fa fa-chevron-down"></i></button>
-														<button type="button" class="btn btn-default"><i class="fa fa-chevron-up"></i></button>
-													</div>
-												</div>
-											</li>
-											<li class="row">
-												<div class="col-sm-7"><label><input type="checkbox"> <span class="pull-right">Описание</span></label></div>
-												<div class="col-sm-5">
-													<div class="btn-group">
-														<button type="button" class="btn btn-primary"><i class="fa fa-chevron-down"></i></button>
-														<button type="button" class="btn btn-default"><i class="fa fa-chevron-up"></i></button>
-													</div>
-												</div>
-											</li>
-											<li class="row">
-												<div class="col-sm-7"><label><input type="checkbox"> <span class="pull-right">Создан</span></label></div>
-												<div class="col-sm-5">
-													<div class="btn-group">
-														<button type="button" class="btn btn-default"><i class="fa fa-chevron-down"></i></button>
-														<button type="button" class="btn btn-default"><i class="fa fa-chevron-up"></i></button>
-													</div>
-												</div>
-											</li>
-											<li class="divider"></li>
-											<li class="row">
-												<div class="col-sm-12">
-													<button type="button" class="btn btn-primary">Применить</button>
-													<button type="button" class="btn btn-danger">Отменить</button>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="navbar-form navbar-right">
-									<!-- Split button -->
-									<div class="btn-group">
-										<button type="button" class="btn btn-default"><i class="fa fa-th"></i></button>
-										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-											<span class="caret"></span>
-											<span class="sr-only">Toggle Dropdown</span>
-										</button>
-										<ul class="dropdown-menu" role="menu">
-											<li><a href="#"><i class="fa fa-list"></i> Список</a></li>
-											<li><a href="#"><i class="fa fa-th"></i> Карточки</a></li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="navbar-form search">
-									<div class="input-group">
-										<input type="text" class="form-control">
-										<span class="input-group-addon"><i class="fa fa-search"></i></span>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div><!-- /.navbar-collapse -->
-				</div><!-- /.container-fluid -->
-			</nav>
-			<div id="content">
-				<div class="cards-masonry"></div>
-			</div>
-		</div>
-	</div>
 </body>
 </html>
